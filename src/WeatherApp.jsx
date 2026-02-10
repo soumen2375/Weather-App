@@ -1,9 +1,9 @@
-import SearchBox from './SearchBox.jsx';
-import InfoBox from "./InfoBox.jsx";
+import SearchBox from './SearchBox';
+import InfoBox from './InfoBox';
 import { useState } from "react";
 
-export default function WeatherApp(){
-    let[weatherInfo, setWeatherInfo] = useState({
+export default function WeatherApp() {
+    const [weatherInfo, setWeatherInfo] = useState({
         city: "Delhi",
         temp: 23.05,
         tempmin: 22.03,
@@ -13,14 +13,14 @@ export default function WeatherApp(){
         weather: "haze"
     });
 
-    let updateInfo = (newInfo) => {
+    const updateInfo = (newInfo) => {
         setWeatherInfo(newInfo);
-    }
+    };
 
-    return(
-        <div>
-            <SearchBox updateInfo={updateInfo}/>
-            <InfoBox info={weatherInfo}/>
+    return (
+        <div className="weather-container">
+            <SearchBox updateInfo={updateInfo} />
+            <InfoBox info={weatherInfo} />
         </div>
-    )
+    );
 }
